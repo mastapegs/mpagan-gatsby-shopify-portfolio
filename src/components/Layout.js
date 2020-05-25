@@ -1,5 +1,6 @@
 import React from 'react'
 import Navigation from './Navigation'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const Layout = ({ children: page }) => {
   return (
@@ -10,6 +11,7 @@ const Layout = ({ children: page }) => {
       <main>
         {page}
       </main>
+      <footer></footer>
     </>
   )
 }

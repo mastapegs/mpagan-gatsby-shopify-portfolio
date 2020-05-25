@@ -3,7 +3,7 @@ import React from 'react'
 const Index = () => {
   return (
     <>
-      <h1>Matthew Pagan</h1>
+      <h1>Home</h1>
     </>
   )
 }
