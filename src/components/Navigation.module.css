@@ -1,0 +1,10 @@
+.navItem {
+  margin: 0 1em;
+}
+
+.link,
+.link:hover,
+.link:visited {
+  color: inherit;
+  text-decoration: inherit;
+}
