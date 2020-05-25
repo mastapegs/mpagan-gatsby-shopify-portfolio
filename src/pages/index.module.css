@@ -1,0 +1,6 @@
+.links,
+.links:hover,
+.links:visited {
+  color: inherit;
+  text-decoration: inherit;
+}

@@ -1,9 +1,15 @@
 import React from 'react'
+import { Jumbotron } from 'react-bootstrap'
 
 const About = () => {
   return (
     <>
-      <h1>About</h1>
+      <Jumbotron>
+        <h1>About</h1>
+        <p>
+          About me
+        </p>
+      </Jumbotron>
     </>
   )
 }
