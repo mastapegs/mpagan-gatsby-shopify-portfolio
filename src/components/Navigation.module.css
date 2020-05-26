@@ -1,10 +1,8 @@
-.navItem {
-  margin: 0 1em;
-}
-
 .link,
 .link:hover,
 .link:visited {
+  display: inline-block;
   color: inherit;
   text-decoration: inherit;
+  width: 100%;
 }
