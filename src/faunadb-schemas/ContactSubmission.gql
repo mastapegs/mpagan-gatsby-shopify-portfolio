@@ -1,0 +1,9 @@
+type ContactSubmission {
+   name: String!
+   email: String!
+   message: String!
+}
+
+type Query {
+   allContactSubmissions: [ContactSubmission!]
+}
