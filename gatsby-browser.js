@@ -2,6 +2,7 @@ const React = require('react')
 const { ApolloClient, ApolloLink, InMemoryCache, HttpLink } = require('apollo-boost');
 const { ApolloProvider } = require('@apollo/react-hooks')
 const Layout = require('./src/components/Layout').default
+const fetch = require('isomorphic-fetch')
 
 exports.wrapPageElement = ({ element, props }) => {
   return (
@@ -23,7 +24,8 @@ exports.wrapRootElement = ({ element }) => {
   });
   const client = new ApolloClient({
     link: authLink.concat(httpLink),
-    cache: new InMemoryCache()
+    cache: new InMemoryCache(),
+    fetch
   });
   return (
     <ApolloProvider client={client}>
