@@ -29,7 +29,7 @@ const Navigation = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav activeKey={pathname} className="mr-auto">
             {links.map(({ href, linkText }) => (
-              <Nav.Link as="li" eventKey={href}>
+              <Nav.Link as="li" eventKey={href} key={href}>
                 <Link className={styles.link} to={href}>{linkText}</Link>
               </Nav.Link>
             ))}

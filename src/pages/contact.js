@@ -1,13 +1,39 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+import { useMutation } from '@apollo/react-hooks'
 import { Form, Button } from 'react-bootstrap'
+import { SUBMIT_CONTACT_FORM } from '../components/queries'
 
 const Contact = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [submitForm, { data, error }] = useMutation(SUBMIT_CONTACT_FORM);
   const handleSubmit = e => {
     e.preventDefault()
+    submitForm({
+      variables: {
+        name,
+        email,
+        message
+      }
+    })
   }
+  useEffect(() => {
+    if (name === '' || email === '' || message === '') return
+    if (data) {
+      console.log(data)
+      setName('')
+      setEmail('')
+      setMessage('')
+      document.getElementById('name').focus()
+    }
+  }, [data])
+  useEffect(() => {
+    if (error) {
+      console.log(error)
+      alert('error')
+    }
+  }, [error])
   return (
     <>
       <h1>Contact</h1>
