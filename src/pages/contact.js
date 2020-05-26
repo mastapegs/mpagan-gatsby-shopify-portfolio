@@ -42,7 +42,7 @@ const Contact = () => {
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Enter name"
+            placeholder="Your name"
             value={name}
             onChange={e => setName(e.target.value)}
           />
@@ -51,7 +51,7 @@ const Contact = () => {
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
-            placeholder="Enter email"
+            placeholder="Your email"
             value={email}
             onChange={e => setEmail(e.target.value)}
           />
@@ -60,6 +60,7 @@ const Contact = () => {
           <Form.Label>Message</Form.Label>
           <Form.Control
             as="textarea"
+            placeholder="Your message"
             rows="4"
             value={message}
             onChange={e => setMessage(e.target.value)}
