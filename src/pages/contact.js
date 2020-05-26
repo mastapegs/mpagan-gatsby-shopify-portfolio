@@ -19,7 +19,7 @@ const Contact = () => {
     })
   }
   useEffect(() => {
-    if (name === '' || email === '' || message === '') return
+    if (name === '' || email === '' || message === '') return;
     if (data) {
       console.log(data)
       setName('')
@@ -37,7 +37,7 @@ const Contact = () => {
   return (
     <>
       <h1>Contact</h1>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={(e) => handleSubmit(e)}>
         <Form.Group controlId="name">
           <Form.Label>Name</Form.Label>
           <Form.Control
