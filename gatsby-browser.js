@@ -11,23 +11,20 @@ exports.wrapPageElement = ({ element, props }) => {
   )
 }
 
-const httpLink = new HttpLink({ uri: 'https://graphql.fauna.com/graphql' });
-
-const authLink = new ApolloLink((operation, forward) => {
-  operation.setContext({
-    headers: {
-      authorization: `Bearer ${process.env.GATSBY_FAUNA_KEY}`
-    }
-  });
-  return forward(operation);
-});
-
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache()
-});
-
 exports.wrapRootElement = ({ element }) => {
+  const httpLink = new HttpLink({ uri: 'https://graphql.fauna.com/graphql' });
+  const authLink = new ApolloLink((operation, forward) => {
+    operation.setContext({
+      headers: {
+        authorization: `Bearer ${process.env.GATSBY_FAUNA_KEY}`
+      }
+    });
+    return forward(operation);
+  });
+  const client = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache()
+  });
   return (
     <ApolloProvider client={client}>
       {element}
