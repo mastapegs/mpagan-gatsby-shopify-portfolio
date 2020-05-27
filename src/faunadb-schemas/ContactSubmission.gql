@@ -1,6 +1,7 @@
 type ContactSubmission {
    name: String!
    email: String!
+   phone: String!
    message: String!
 }
 

@@ -15,6 +15,7 @@ const Contact = () => {
       variables: {
         name,
         email,
+        phone,
         message
       }
     })
@@ -25,6 +26,7 @@ const Contact = () => {
       console.log(data)
       setName('')
       setEmail('')
+      setPhone('')
       setMessage('')
       document.getElementById('name').focus()
     }
