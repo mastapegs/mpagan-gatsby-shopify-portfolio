@@ -47,7 +47,7 @@ const Contact = () => {
             onChange={e => setName(e.target.value)}
           />
         </Form.Group>
-        <Form.Group controlId="formBasicEmail">
+        <Form.Group controlId="email">
           <Form.Label>Email address</Form.Label>
           <Form.Control
             type="email"
