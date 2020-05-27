@@ -7,6 +7,7 @@ const Contact = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
+  const [phone, setPhone] = useState('')
   const [submitForm, { data, error }] = useMutation(SUBMIT_CONTACT_FORM);
   const handleSubmit = e => {
     e.preventDefault()
@@ -54,6 +55,15 @@ const Contact = () => {
             placeholder="Your email"
             value={email}
             onChange={e => setEmail(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group controlId="email">
+          <Form.Label>Phone #</Form.Label>
+          <Form.Control
+            type="tel"
+            placeholder="Your phone number"
+            value={phone}
+            onChange={e => setPhone(e.target.value)}
           />
         </Form.Group>
         <Form.Group controlId="message">
