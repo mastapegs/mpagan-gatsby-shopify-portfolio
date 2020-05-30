@@ -23,7 +23,6 @@ const Contact = () => {
   useEffect(() => {
     if (name === '' || email === '' || message === '') return;
     if (data) {
-      console.log(data)
       setName('')
       setEmail('')
       setPhone('')
