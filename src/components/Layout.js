@@ -1,21 +1,8 @@
 import React from 'react'
 import Navigation from './Navigation'
 import 'bootstrap/dist/css/bootstrap.min.css'
-import { graphql } from 'gatsby'
 
-export const query = graphql`
-{
-  site {
-    siteMetadata {
-      title
-      siteUrl
-      description
-    }
-  }
-}
-`
-
-const Layout = ({ data, children: page }) => {
+const Layout = ({ children: page }) => {
   return (
     <>
       <header>
