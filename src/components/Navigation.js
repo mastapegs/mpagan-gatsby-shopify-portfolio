@@ -24,7 +24,7 @@ const Navigation = () => {
   return (
     <>
       <Navbar bg="dark" variant='dark' expand="sm">
-        <Navbar.Brand><Link className={styles.link} to='/'>Matthew Pagan</Link></Navbar.Brand>
+        <Navbar.Brand><Link className={styles.link} to='/'>🌐 Matthew Pagan</Link></Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav activeKey={pathname} className="mr-auto">
