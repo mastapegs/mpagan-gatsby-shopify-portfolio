@@ -4,3 +4,13 @@
   color: inherit;
   text-decoration: inherit;
 }
+
+.heroImg {
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-shadow: 2px 2px 2px black;
+}
