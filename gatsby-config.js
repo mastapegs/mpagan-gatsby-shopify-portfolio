@@ -22,7 +22,7 @@ module.exports = {
       options: {
         host: 'https://matthewpagan.com',
         sitemap: 'https://matthewpagan.com/sitemap.xml',
-        policy: [{ userAgent: '*', allow: '/' }],
+        policy: [{ userAgent: '*', allow: '*' }],
       },
      },
     `gatsby-plugin-react-helmet`,
