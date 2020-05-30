@@ -25,7 +25,7 @@ const Index = ({ data }) => {
         tag='section'
         className={styles.heroImg}
       >
-        <div>
+        <div className={styles.textContainer}>
           <h1>Web Developer</h1>
           <p>
             Welcome to my portfolio website.
