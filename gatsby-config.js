@@ -8,6 +8,18 @@ const path = require(`path`)
 
 plugins: [
   {
+    resolve: `gatsby-plugin-manifest`,
+    options: {
+      name: `Matthew Pagan`,
+      short_name: `Matthew Pagan`,
+      start_url: `/`,
+      background_color: `#ffffff`,
+      theme_color: `#092cb8`,
+      display: `standalone`
+    }
+  },
+  'gatsby-plugin-offline',
+  {
     resolve: `gatsby-source-filesystem`,
     options: {
       name: `images`,

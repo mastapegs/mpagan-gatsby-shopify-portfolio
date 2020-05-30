@@ -1,7 +1,6 @@
 import React from 'react'
 import { Button } from 'react-bootstrap'
 import { Link, graphql } from 'gatsby'
-import Img from 'gatsby-image'
 import styles from './index.module.css'
 import BackgroundImage from 'gatsby-background-image'
 
