@@ -16,7 +16,14 @@ module.exports = {
     }
   },
   plugins: [
-    'gatsby-plugin-robots-txt',
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://matthewpagan.com',
+        sitemap: 'https://matthewpagan.com/sitemap.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+     },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
