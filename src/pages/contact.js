@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useMutation } from '@apollo/react-hooks'
-import { Form, Button, Container } from 'react-bootstrap'
+import { Form, Button, Container, Modal } from 'react-bootstrap'
 import { SUBMIT_CONTACT_FORM } from '../components/queries'
 import SEO from '../components/SEO'
 
@@ -9,6 +9,8 @@ const Contact = () => {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [phone, setPhone] = useState('')
+  const [show, setShow] = useState(false)
+  const [disabled, setDisabled] = useState(false)
   const [submitForm, { data, error }] = useMutation(SUBMIT_CONTACT_FORM);
   const handleSubmit = e => {
     e.preventDefault()
@@ -21,15 +23,18 @@ const Contact = () => {
       }
     })
   }
+  const handleClose = () => {
+    setName('')
+    setEmail('')
+    setPhone('')
+    setMessage('')
+    setDisabled(false)
+    setShow(false)
+  }
   useEffect(() => {
-    if (name === '' || email === '' || message === '') return;
-    if (data) {
-      setName('')
-      setEmail('')
-      setPhone('')
-      setMessage('')
-      document.getElementById('name').focus()
-    }
+    if (name === '' || email === '' || phone === '' || message === '') return;
+    setDisabled(true)
+    setShow(true)
   }, [data])
   useEffect(() => {
     if (error) {
@@ -80,8 +85,23 @@ const Contact = () => {
               onChange={e => setMessage(e.target.value)}
             />
           </Form.Group>
-          <Button variant="primary" type="submit">Submit</Button>
+          <Button variant="primary" type="submit" disabled={disabled}>Submit</Button>
         </Form>
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>😀 Thank you for reaching out to me!</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <p>
+              📧 I'll make sure to email you back at <strong>{email}</strong>
+            </p>
+          </Modal.Body>
+          <Modal.Footer>
+            <p>
+              🙏🏻 Thank you again {name}!
+            </p>
+          </Modal.Footer>
+        </Modal>
       </Container>
     </>
   )
