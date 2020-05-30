@@ -3,6 +3,7 @@ import { Button } from 'react-bootstrap'
 import { Link, graphql } from 'gatsby'
 import styles from './index.module.css'
 import BackgroundImage from 'gatsby-background-image'
+import SEO from '../components/SEO'
 
 export const query = graphql`
 query MyQuery {
@@ -19,6 +20,7 @@ query MyQuery {
 const Index = ({ data }) => {
   return (
     <>
+      <SEO title='Home' />
       <BackgroundImage
         fluid={data.file.childImageSharp.fluid}
         tag='section'

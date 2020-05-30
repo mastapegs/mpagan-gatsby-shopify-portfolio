@@ -7,7 +7,16 @@
 const path = require(`path`)
 
 module.exports = {
+  siteMetadata: {
+    title: `Matthew Pagan`,
+    siteUrl: `https://matthewpagan.com`,
+    description: `Blazing fast modern websites`,
+    social: {
+      twitter: `mastapegs`
+    }
+  },
   plugins: [
+    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
