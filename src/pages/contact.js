@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useMutation } from '@apollo/react-hooks'
-import { Form, Button } from 'react-bootstrap'
+import { Form, Button, Container } from 'react-bootstrap'
 import { SUBMIT_CONTACT_FORM } from '../components/queries'
 
 const Contact = () => {
@@ -37,7 +37,7 @@ const Contact = () => {
     }
   }, [error])
   return (
-    <>
+    <Container>
       <h1>Contact</h1>
       <Form onSubmit={(e) => handleSubmit(e)}>
         <Form.Group controlId="name">
@@ -79,7 +79,7 @@ const Contact = () => {
         </Form.Group>
         <Button variant="primary" type="submit">Submit</Button>
       </Form>
-    </>
+    </Container>
   )
 }
 
