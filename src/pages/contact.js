@@ -89,16 +89,16 @@ const Contact = () => {
         </Form>
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
-            <Modal.Title>😀 Thank you for reaching out to me!</Modal.Title>
+            <Modal.Title><span role='img' aria-label='Smiley Face'>😀</span> Thank you for reaching out to me!</Modal.Title>
           </Modal.Header>
           <Modal.Body>
             <p>
-              📧 I'll make sure to email you back at <strong>{email}</strong>
+            <span role='img' aria-label='Email'>📧</span> I'll make sure to email you back at <strong>{email}</strong>
             </p>
           </Modal.Body>
           <Modal.Footer>
             <p>
-              🙏🏻 Thank you again {name}!
+            <span role='img' aria-label='Prayer Emoji'>🙏🏻</span> Thank you again {name}!
             </p>
           </Modal.Footer>
         </Modal>
